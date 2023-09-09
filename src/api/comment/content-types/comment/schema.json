@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "singularName": "comment",
+    "pluralName": "comments",
+    "displayName": "comment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "comments"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "ratting": {
+      "type": "float",
+      "min": 0,
+      "max": 5,
+      "required": true
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "authors",
+    "displayName": "member",
     "description": ""
   },
   "options": {
@@ -25,11 +25,17 @@
       "required": true,
       "unique": true
     },
-    "posts": {
+    "shops": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::post.post",
-      "mappedBy": "author"
+      "mappedBy": "members"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "members"
     }
   }
 }
